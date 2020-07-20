@@ -1,9 +1,11 @@
 import React from "react";
 
+import App from "../../App";
+
 export default function Dashboard() {
   return (
-    <div>
+    <App>
       <h1>Dashboard</h1>
-    </div>
+    </App>
   );
 }
