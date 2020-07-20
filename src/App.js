@@ -1,20 +1,10 @@
-<<<<<<< HEAD
 import React from "react";
 import { CFooter } from "@coreui/react";
 import "./scss/style.scss";
-=======
-import React from 'react';
-import './scss/style.scss';
-
-import { TheFooter, TheHeader } from './containers/index'
-
-
->>>>>>> 191781ab6ce5db0fea5df0e896c5463fe3ca5555
-
+// COMENTARIO
 function App() {
   return (
     <div>
-<<<<<<< HEAD
       <h1>Test React App</h1>
       <CFooter fixed={false}>
         <div>
@@ -34,11 +24,6 @@ function App() {
           </a>
         </div>
       </CFooter>
-=======
-      <TheHeader />
-      
-      <TheFooter />
->>>>>>> 191781ab6ce5db0fea5df0e896c5463fe3ca5555
     </div>
   );
 }
