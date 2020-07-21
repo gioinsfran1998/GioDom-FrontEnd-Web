@@ -19,7 +19,7 @@ body,
 }
 
 body {
-  background: #000 url("../../assets/background.jpg") no-repeat;
+  background: #000 url("../../assets/background.jpeg") no-repeat;
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
   width: 100%;

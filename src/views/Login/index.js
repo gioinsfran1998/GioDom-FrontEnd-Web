@@ -4,6 +4,7 @@ import logo from "../../assets/logo.svg";
 
 export default function Login() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -23,13 +24,21 @@ export default function Login() {
           <strong>talentos</strong> para tu empresa
         </p>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">E-MAIL *</label>
+          <label htmlFor="email">E-MAIL</label>
           <input
             type="email"
             id="email"
             value={email}
             placeholder="Su mejor email"
             onChange={(event) => setEmail(event.target.value)}
+          />
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            placeholder="Su mejor password"
+            onChange={(event) => setPassword(event.target.value)}
           />
           <button className="btn" type="submit">
             Entrar

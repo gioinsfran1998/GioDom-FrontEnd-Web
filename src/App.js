@@ -1,16 +1,40 @@
-import React from "react";
+import React, { Component } from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "./scss/style.scss";
 
-import { TheFooter, TheHeader } from "./containers/index";
+const loading = (
+  <div className="pt-3 text-center">
+    <div className="sk-spinner sk-spinner-pulse"></div>
+  </div>
+);
 
-function App(props) {
-  return (
-    <div>
-      <TheHeader />
-      {props.children}
-      <TheFooter />
-    </div>
-  );
+// Containers
+const TheLayout = React.lazy(() => import("./containers/TheLayout"));
+
+// Pages
+const Login = React.lazy(() => import("./views/Login"));
+
+class App extends Component {
+  render() {
+    return (
+      <HashRouter>
+        <React.Suspense fallback={loading}>
+          <Switch>
+            <Route
+              exact
+              path="/login"
+              name="Login Page"
+              render={(props) => <Login {...props} />}
+            />
+            <Route
+              path="/"
+              name="Home"
+              render={(props) => <TheLayout {...props} />}
+            />
+          </Switch>
+        </React.Suspense>
+      </HashRouter>
+    );
+  }
 }
-
 export default App;

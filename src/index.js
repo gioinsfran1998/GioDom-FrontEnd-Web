@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Routes from "./routes";
-import Login from "./views/Login";
+import App from "./App";
+import { Provider } from "react-redux";
+import { icons } from "./assets/icons";
+import store from "./store";
+
+React.icons = icons;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );

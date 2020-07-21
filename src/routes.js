@@ -1,16 +1,10 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Login from "./views/Login";
-import Dashboard from "./views/Dashboard";
+const Dashboard = React.lazy(() => import("./views/Dashboard"));
 
-export default function Routes() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
-      </Switch>
-    </BrowserRouter>
-  );
-}
+const routes = [
+  { path: "/", exact: true, name: "Home" },
+  { path: "/dashboard", name: "Dashboard", component: Dashboard },
+];
+
+export default routes;
