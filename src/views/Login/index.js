@@ -1,50 +1,55 @@
-import React, { useState } from "react";
-import "./styles.css";
-import logo from "../../assets/logo.svg";
+import React from 'react'
+import * as L from './styles'
+import CIcon from '@coreui/icons-react'
+import LogoBota from '../../assets/logobota.png'
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+import {
+  CButton,
+  CInput,
+  CInputGroup,
+  CInputGroupText,
+} from '@coreui/react'
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    // const response = await api.post("/sessions", { email });
-    // const { _id } = response.data;
-    // localStorage.setItem("user_id", _id);
-    // history.push("/dashboard");
-    // console.log(_id);
-  }
+const indexLogin = () => {
   return (
-    <div className="container">
-      <img src={logo} alt="logo" />
-      <div className="content">
-        <p>
-          Ofrezca <strong>spots</strong> para los programadores y encuentre{" "}
-          <strong>talentos</strong> para tu empresa
-        </p>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">E-MAIL</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            placeholder="Su mejor email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <label htmlFor="password">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            placeholder="Su mejor password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <button className="btn" type="submit">
-            Entrar
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+      <L.Container className="Container">
+            <L.CardLogin>
+
+              <img src={LogoBota} className="logoBota"/>
+
+              <div className="TextCard">
+                  <h1>Bienvenido</h1>
+                  <h5>Ingrese a su cuenta</h5>
+              </div>
+
+              <div className="inputContainer">
+                    <CInputGroup className="box-input">
+                              <CInputGroupText>
+                                <CIcon name="cil-user" />
+                              </CInputGroupText>
+                        <CInput type="text" placeholder="Username" autoComplete="username" />
+                    </CInputGroup>
+
+                    <CInputGroup className="box-input">
+                           
+                              <CInputGroupText>
+                                <CIcon name="cil-lock-locked" />
+                              </CInputGroupText>
+                           
+                            <CInput type="password" placeholder="Password" autoComplete="current-password" />
+                    </CInputGroup> 
+              </div>
+
+              <div className="buttonContainer">
+                      
+                        <CButton color="primary" className="px-4 button buttonIngresar">Ingresar</CButton>
+                        <CButton color="link" className="px-0 button">Olvido su contraseña?</CButton>
+                     
+              </div>
+
+            </L.CardLogin>
+      </L.Container>
+  )
 }
+
+export default indexLogin
