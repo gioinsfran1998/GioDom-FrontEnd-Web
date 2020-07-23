@@ -7,6 +7,7 @@ import TheLayout from "./TheLayout";
 import TheHeaderDropdownTasks from "./TheHeaderDropdownTasks";
 import TheHeaderDropdownMssg from "./TheHeaderDropdownMssg";
 import TheHeaderDropdownNotif from "./TheHeaderDropdownNotif";
+import TheGrid from "./TheGrid";
 
 export {
   TheFooter,
@@ -18,4 +19,5 @@ export {
   TheHeaderDropdownTasks,
   TheHeaderDropdownMssg,
   TheHeaderDropdownNotif,
+  TheGrid,
 };
