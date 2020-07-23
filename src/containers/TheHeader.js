@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  CButton,
   CHeader,
   CToggler,
   CHeaderBrand,
@@ -77,14 +78,21 @@ const TheHeader = () => {
         <TheHeaderDropdown />
       </CHeaderNav>
 
-      <CSubheader className="px-3 justify-content-between">
+      <CSubheader className="px-10 justify-content-between">
         <CBreadcrumbRouter
           className="border-0 c-subheader-nav m-0 px-0 px-md-3"
           routes={routes}
         />
-        <div className="d-md-down-none mfe-2 c-subheader-nav">
-          <CLink className="c-subheader-nav-link" href="#">
-            <CIcon name="cil-speech" alt="Settings" />
+        {/* <div className="marged-md-down-none mfe-2 c-subheader-nav my-2 my-sm-0">
+          <CLink className="c-subheader-nav-link my-2 my-sm-0" href="#">
+            <CButton
+              active
+              color="success"
+              aria-pressed="true"
+              onClick={console.log(routes)}
+            >
+              Nuevo
+            </CButton>
           </CLink>
           <CLink
             className="c-subheader-nav-link"
@@ -98,7 +106,7 @@ const TheHeader = () => {
             <CIcon name="cil-settings" alt="Settings" />
             &nbsp;Settings
           </CLink>
-        </div>
+        </div> */}
       </CSubheader>
     </CHeader>
   );
