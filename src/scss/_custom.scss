@@ -1,1 +1,11 @@
 // Here you can add other styles
+.card-columns.cols-1 {
+  column-count: 1;
+}
+
+.containerApp {
+  border: solid;
+  border-width: 1px;
+  border-color: #dfe1e2;
+  background-color: white;
+}

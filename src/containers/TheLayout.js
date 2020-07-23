@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TheHeader, TheSidebar, TheContent } from "./index";
+import { TheHeader, TheSidebar, TheContent, TheFooter } from "./index";
 
 function TheLayout() {
   return (
@@ -11,6 +11,7 @@ function TheLayout() {
         <div className="c-body">
           <TheContent />
         </div>
+        <TheFooter />
       </div>
     </div>
   );
