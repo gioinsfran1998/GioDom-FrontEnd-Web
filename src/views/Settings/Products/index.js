@@ -2,7 +2,7 @@ import React from "react";
 import TheGrid from "../../../containers/TheGrid";
 import foto from "../../../assets/img/nafta-92.png";
 
-export default function Products() {
+export default function Products({ history }) {
   const products = [
     "nafta96",
     "nafta85",

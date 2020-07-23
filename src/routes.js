@@ -8,6 +8,7 @@ const Products = React.lazy(() => import("./views/Settings/Products"));
 const Users = React.lazy(() => import("./views/Settings/Users"));
 const Customers = React.lazy(() => import("./views/Settings/Customers"));
 const Providers = React.lazy(() => import("./views/Settings/Providers"));
+const TheForm = React.lazy(() => import("./containers/TheForm"));
 
 const routes = [
   { path: "/", exact: true, name: "Home" },
@@ -20,6 +21,7 @@ const routes = [
   { path: "/settings/users", name: "Usuarios", component: Users },
   { path: "/settings/customers", name: "Clientes", component: Customers },
   { path: "/settings/providers", name: "Proveedores", component: Providers },
+  { path: "/settings/form", name: "Formulario", component: TheForm },
 ];
 
 export default routes;

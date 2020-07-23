@@ -1,4 +1,7 @@
 import React from "react";
+
+import { useHistory } from "react-router-dom";
+
 import {
   CButton,
   CCard,
@@ -8,16 +11,24 @@ import {
 } from "@coreui/react";
 
 export default function TheGrid(props) {
+  let history = useHistory();
+  function New() {
+    console.log(history);
+    history.push("/settings/form");
+  }
   return (
     <CCard style={{ backgroundColor: "#ebedef" }}>
       <CCardHeader>
-        <CButton color="success">Nuevo</CButton>
+        <CButton color="success" onClick={New} na>
+          Nuevo
+        </CButton>
       </CCardHeader>
       <CCardBody>
         <CCardGroup columns className="cols-1 p-2">
           {props.itens &&
-            props.itens.map((pro) => (
+            props.itens.map((pro, index) => (
               <CCard
+                key={index}
                 style={{
                   width: 150,
                   height: 150,
