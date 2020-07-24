@@ -13,10 +13,13 @@ import {
 const indexLogin = () => {
   return (
       <L.Container className="Container">
+
+              {/* <img src={LogoBota} className="logoBota"/> */}
+              <L.Logo src={LogoBota}>
+                 <img src={LogoBota} className="logoBota"/>
+              </L.Logo>
             <L.CardLogin>
-
-              <img src={LogoBota} className="logoBota"/>
-
+              
               <div className="TextCard">
                   <h1>Bienvenido</h1>
                   <h5>Ingrese a su cuenta</h5>
@@ -31,23 +34,24 @@ const indexLogin = () => {
                     </CInputGroup>
 
                     <CInputGroup className="box-input">
-                           
+
                               <CInputGroupText>
                                 <CIcon name="cil-lock-locked" />
                               </CInputGroupText>
-                           
+
                             <CInput type="password" placeholder="Password" autoComplete="current-password" />
-                    </CInputGroup> 
+                    </CInputGroup>
               </div>
 
               <div className="buttonContainer">
-                      
+
                         <CButton color="primary" className="px-4 button buttonIngresar">Ingresar</CButton>
                         <CButton color="link" className="px-0 button">Olvido su contraseña?</CButton>
-                     
+
               </div>
 
             </L.CardLogin>
+
       </L.Container>
   )
 }
