@@ -49,6 +49,11 @@ export default [
       },
       {
         _tag: "CSidebarNavItem",
+        name: "Domenico",
+        to: "/settings/domenico",
+      },
+      {
+        _tag: "CSidebarNavItem",
         name: "Clientes",
         to: "/settings/customers",
       },

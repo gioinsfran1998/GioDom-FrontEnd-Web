@@ -9,3 +9,31 @@
   border-color: #dfe1e2;
   background-color: white;
 }
+
+label#thumbnail {
+  margin-bottom: 20px;
+  border: 1px dashed #ddd;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  height: 160px;
+  width: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label#thumbnail input {
+  display: none;
+}
+
+label#thumbnail.has-thumbnail {
+  border: 0;
+}
+
+label#thumbnail.has-thumbnail img {
+  border: 0;
+  display: none;
+  background-size: cover;
+}
