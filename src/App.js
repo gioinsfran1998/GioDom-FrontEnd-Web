@@ -13,7 +13,6 @@ const TheLayout = React.lazy(() => import("./containers/TheLayout"));
 
 // Pages
 const Login = React.lazy(() => import("./views/Login"));
-// const IndexLogin = React.lazy(() => import("./views/Login/indexLogin"));
 
 class App extends Component {
   render() {
@@ -27,12 +26,7 @@ class App extends Component {
               name="Login Page"
               render={(props) => <Login {...props} />}
             />
-            {/* <Route
-              exact
-              path="/indexlogin"
-              name="Login Page"
-              render={(props) => <IndexLogin {...props} />}
-            /> */}
+
             <Route
               path="/"
               name="Home"
