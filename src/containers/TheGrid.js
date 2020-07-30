@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
 
@@ -11,10 +11,13 @@ import {
 } from "@coreui/react";
 
 export default function TheGrid(props) {
+  const [update, setUpdate] = useState("domenico");
   let history = useHistory();
   function New() {
     console.log(history);
-    history.push("/settings/form");
+    history.push(`/settings/form/${props.price ? "producto" : "otros"}`, [
+      update,
+    ]);
   }
   return (
     <CCard style={{ backgroundColor: "#ebedef" }}>

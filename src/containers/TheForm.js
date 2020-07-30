@@ -9,18 +9,27 @@ import {
   CCardBody,
   CCardHeader,
   CCardGroup,
+  CRow,
+  CCol,
+  CFormGroup,
+  CLabel,
+  CInput,
+  CSelect,
 } from "@coreui/react";
-export default function TheForm() {
+
+export default function TheForm(props) {
   const [thumbnail, setThumbnail] = useState(null);
+  const [name, setName] = useState("");
 
   let history = useHistory();
+
+  console.log(props.match.params.price);
 
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
   }, [thumbnail]);
 
   function Salve() {
-    console.log(history);
     history.push("/settings/products");
   }
 
@@ -32,17 +41,114 @@ export default function TheForm() {
         </CButton>
       </CCardHeader>
       <CCardBody>
-        <label
-          id="thumbnail"
-          style={{ backgroundImage: `url(${preview})` }}
-          className={thumbnail ? "has-thumbnail" : ""}
+        <CRow
+          style={{
+            marginLeft: "180px",
+            marginBottom: "30px",
+            marginRight: "380px",
+            alignItems: "center",
+          }}
         >
-          <input
-            type="file"
-            onChange={(event) => setThumbnail(event.target.files[0])}
-          />
-          <img src={camera} alt="Selecione una image" />
-        </label>
+          <CCol xs="12">
+            <CFormGroup row>
+              <label
+                id="thumbnail"
+                style={{ backgroundImage: `url(${preview})` }}
+                className={thumbnail ? "has-thumbnail" : ""}
+              >
+                <input
+                  type="file"
+                  onChange={(event) => setThumbnail(event.target.files[0])}
+                />
+                <img src={camera} alt="Selecione una image" />
+              </label>
+              <span style={{ fontSize: 48 }}>{name}</span>
+            </CFormGroup>
+          </CCol>
+        </CRow>
+
+        <CRow style={{ marginLeft: "180px", marginRight: "380px" }}>
+          <CCol xs="12">
+            <CFormGroup>
+              <CInput
+                id="ccnumber"
+                placeholder={
+                  props.match.params.price === "producto"
+                    ? `Nombre del producto`
+                    : `Nombre completo`
+                }
+                required
+                onChange={(e) => setName(e.target.value)}
+              />
+            </CFormGroup>
+          </CCol>
+        </CRow>
+        {props.match.params.price === "producto" ? (
+          <CRow style={{ marginLeft: "180px", marginRight: "380px" }}>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="ccmonth">Categoria</CLabel>
+                <CSelect custom name="ccmonth" id="ccmonth">
+                  <option>Selecione una categoria</option>
+                  <option value="combustible">Combustible</option>
+                  <option value="insumo">Insumos</option>
+                </CSelect>
+              </CFormGroup>
+            </CCol>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="ccyear">Costo</CLabel>
+                <CInput
+                  id="cost"
+                  placeholder="costo de la mercaderia"
+                  type="Number"
+                />
+              </CFormGroup>
+            </CCol>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="price">Precio</CLabel>
+                <CInput
+                  id="cvv"
+                  placeholder="precio de venta"
+                  type="number"
+                  required
+                />
+              </CFormGroup>
+            </CCol>
+          </CRow>
+        ) : (
+          <CRow style={{ marginLeft: "180px", marginRight: "380px" }}>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="price">Contacto</CLabel>
+                <CInput
+                  id="contactName"
+                  placeholder="Nombre del contato"
+                  type="text"
+                  required
+                />
+              </CFormGroup>
+            </CCol>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="celphone">Celualar</CLabel>
+                <CInput id="cost" placeholder="Numero de contacto" />
+              </CFormGroup>
+            </CCol>
+            <CCol xs="4">
+              <CFormGroup>
+                <CLabel htmlFor="price">Direccion</CLabel>
+                <CInput
+                  id="cvv"
+                  placeholder="Direccion o referencia"
+                  type="text"
+                  required
+                />
+              </CFormGroup>
+            </CCol>
+          </CRow>
+        )}
       </CCardBody>
     </CCard>
   );

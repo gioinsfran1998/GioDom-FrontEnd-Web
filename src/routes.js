@@ -24,7 +24,7 @@ const routes = [
   { path: "/settings/domenico", name: "Usuarios", component: Domenico },
   { path: "/settings/customers", name: "Clientes", component: Customers },
   { path: "/settings/providers", name: "Proveedores", component: Providers },
-  { path: "/settings/form", name: "Formulario", component: TheForm },
+  { path: "/settings/form/:price", name: "Formulario", component: TheForm },
 ];
 
 export default routes;
