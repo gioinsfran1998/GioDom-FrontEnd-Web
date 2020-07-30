@@ -1,59 +1,58 @@
-import React from 'react'
-import * as L from './styles'
-import CIcon from '@coreui/icons-react'
-import LogoBota from '../../assets/logobota.png'
+import React from "react";
+import * as L from "./styles";
+import CIcon from "@coreui/icons-react";
+import LogoBota from "../../assets/logobota.png";
 
-import {
-  CButton,
-  CInput,
-  CInputGroup,
-  CInputGroupText,
-} from '@coreui/react'
+import { CButton, CInput, CInputGroup, CInputGroupText } from "@coreui/react";
 
 const indexLogin = () => {
   return (
-      <L.Container className="Container">
+    <L.Container className="Container">
+      <L.Logo src={LogoBota}>
+        <img src={LogoBota} className="logoBota" />
+      </L.Logo>
+      <L.CardLogin>
+        <div className="TextCard">
+          <h1>Bienvenido</h1>
+          <h5>Ingrese a su cuenta</h5>
+        </div>
 
-              {/* <img src={LogoBota} className="logoBota"/> */}
-              <L.Logo src={LogoBota}>
-                 <img src={LogoBota} className="logoBota"/>
-              </L.Logo>
-            <L.CardLogin>
-              
-              <div className="TextCard">
-                  <h1>Bienvenido</h1>
-                  <h5>Ingrese a su cuenta</h5>
-              </div>
+        <div className="inputContainer">
+          <CInputGroup className="box-input">
+            <CInputGroupText>
+              <CIcon name="cil-user" />
+            </CInputGroupText>
+            <CInput
+              type="text"
+              placeholder="Username"
+              autoComplete="username"
+            />
+          </CInputGroup>
 
-              <div className="inputContainer">
-                    <CInputGroup className="box-input">
-                              <CInputGroupText>
-                                <CIcon name="cil-user" />
-                              </CInputGroupText>
-                        <CInput type="text" placeholder="Username" autoComplete="username" />
-                    </CInputGroup>
+          <CInputGroup className="box-input">
+            <CInputGroupText>
+              <CIcon name="cil-lock-locked" />
+            </CInputGroupText>
 
-                    <CInputGroup className="box-input">
+            <CInput
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+          </CInputGroup>
+        </div>
 
-                              <CInputGroupText>
-                                <CIcon name="cil-lock-locked" />
-                              </CInputGroupText>
+        <div className="buttonContainer">
+          <CButton color="primary" className="px-4 button buttonIngresar">
+            Ingresar
+          </CButton>
+          <CButton color="link" className="px-0 button">
+            Olvido su contraseña?
+          </CButton>
+        </div>
+      </L.CardLogin>
+    </L.Container>
+  );
+};
 
-                            <CInput type="password" placeholder="Password" autoComplete="current-password" />
-                    </CInputGroup>
-              </div>
-
-              <div className="buttonContainer">
-
-                        <CButton color="primary" className="px-4 button buttonIngresar">Ingresar</CButton>
-                        <CButton color="link" className="px-0 button">Olvido su contraseña?</CButton>
-
-              </div>
-
-            </L.CardLogin>
-
-      </L.Container>
-  )
-}
-
-export default indexLogin
+export default indexLogin;

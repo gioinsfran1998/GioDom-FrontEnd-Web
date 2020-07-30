@@ -32,8 +32,8 @@ const TheHeaderDropdownNotif = () => {
           deleted
         </CDropdownItem>
         <CDropdownItem>
-          <CIcon name="cil-chart-pie" className="mr-2 text-info" /> Sales report
-          is ready
+          <CIcon name="cil-basket" className="mr-2 text-info" /> Sales report is
+          ready
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-basket" className="mr-2 text-primary" /> New client

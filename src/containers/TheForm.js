@@ -8,7 +8,6 @@ import {
   CCard,
   CCardBody,
   CCardHeader,
-  CCardGroup,
   CRow,
   CCol,
   CFormGroup,
@@ -23,8 +22,6 @@ export default function TheForm(props) {
 
   let history = useHistory();
 
-  console.log(props.match.params.price);
-
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
   }, [thumbnail]);
@@ -36,7 +33,10 @@ export default function TheForm(props) {
   return (
     <CCard style={{ backgroundColor: "#ebedef" }}>
       <CCardHeader>
-        <CButton color="success" onClick={Salve}>
+        <CButton color="secondary" onClick={Salve} style={{ width: 80 }}>
+          Cancelar
+        </CButton>{" "}
+        <CButton color="success" onClick={Salve} style={{ width: 80 }}>
           Guardar
         </CButton>
       </CCardHeader>
@@ -60,7 +60,7 @@ export default function TheForm(props) {
                   type="file"
                   onChange={(event) => setThumbnail(event.target.files[0])}
                 />
-                <img src={camera} alt="Selecione una image" />
+                <img src={camera} alt="Selecione tu producto" />
               </label>
               <span style={{ fontSize: 48 }}>{name}</span>
             </CFormGroup>
