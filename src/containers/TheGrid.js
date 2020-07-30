@@ -15,9 +15,10 @@ export default function TheGrid(props) {
   let history = useHistory();
   function New() {
     console.log(history);
-    history.push(`/settings/form/${props.price ? "producto" : "otros"}`, [
-      update,
-    ]);
+    history.push(
+      `/settings/form/${props.price ? "producto" : "otros"}/${props.name}`,
+      [update]
+    );
   }
   return (
     <CCard style={{ backgroundColor: "#ebedef" }}>
@@ -45,6 +46,7 @@ export default function TheGrid(props) {
                   borderBottomWidth: 2,
                   cursor: "pointer",
                 }}
+                onClick={New}
               >
                 <CCardBody>
                   {props.price && (

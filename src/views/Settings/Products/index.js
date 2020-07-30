@@ -18,5 +18,5 @@ export default function Products({ history }) {
     "disel podium",
     "nafta92+",
   ];
-  return <TheGrid itens={products} foto={foto} price />;
+  return <TheGrid itens={products} foto={foto} name="producto" price />;
 }

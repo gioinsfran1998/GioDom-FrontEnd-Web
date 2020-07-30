@@ -14,5 +14,5 @@ export default function Customers() {
     "cliente 10",
     "cliente 11",
   ];
-  return <TheGrid itens={customers} foto={foto} />;
+  return <TheGrid itens={customers} foto={foto} name="cliente" />;
 }

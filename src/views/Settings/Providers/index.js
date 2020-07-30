@@ -24,5 +24,5 @@ export default function Providers() {
     "proveedor 19",
     "proveedor 20",
   ];
-  return <TheGrid itens={providers} foto={foto} />;
+  return <TheGrid itens={providers} foto={foto} name="proveedor" />;
 }

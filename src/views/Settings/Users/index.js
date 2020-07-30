@@ -24,5 +24,5 @@ export default function Users() {
     "Usuario 19",
     "Usuario 20",
   ];
-  return <TheGrid itens={users} foto={foto} />;
+  return <TheGrid itens={users} foto={foto} name="usuario" />;
 }

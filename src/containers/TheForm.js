@@ -72,18 +72,14 @@ export default function TheForm(props) {
             <CFormGroup>
               <CInput
                 id="ccnumber"
-                placeholder={
-                  props.match.params.price === "producto"
-                    ? `Nombre del producto`
-                    : `Nombre completo`
-                }
+                placeholder={`Nombre del ${props.match.params.name}`}
                 required
                 onChange={(e) => setName(e.target.value)}
               />
             </CFormGroup>
           </CCol>
         </CRow>
-        {props.match.params.price === "producto" ? (
+        {props.match.params.type === "producto" ? (
           <CRow style={{ marginLeft: "180px", marginRight: "380px" }}>
             <CCol xs="4">
               <CFormGroup>
