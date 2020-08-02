@@ -1,4 +1,8 @@
 import React, { useState, useMemo } from "react";
+
+import * as yup from "yup";
+import { Formik, Form as FormikForm, Field } from "formik";
+
 import { useHistory } from "react-router-dom";
 
 import camera from "../assets/camera.svg";
@@ -16,9 +20,17 @@ import {
   CSelect,
 } from "@coreui/react";
 
+const validation = yup.object().shape({
+  user: yup.string().email().required(),
+  password: yup.string().min(8).required(),
+});
+
 export default function TheForm(props) {
   const [thumbnail, setThumbnail] = useState(null);
   const [name, setName] = useState("");
+
+  const handleSubmit = (values) => console.log(values);
+  const initialValues = {};
 
   let history = useHistory();
 
@@ -41,6 +53,21 @@ export default function TheForm(props) {
         </CButton>
       </CCardHeader>
       <CCardBody>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={validation}
+        >
+          <FormikForm>
+            <div>
+              <Field name="user" placeholder="Usuario" type="text" />
+            </div>
+            <div>
+              <Field name="password" placeholder="Contraseña" type="password" />
+            </div>
+            <button type="submit">Login</button>
+          </FormikForm>
+        </Formik>
         <CRow
           style={{
             marginLeft: "180px",
